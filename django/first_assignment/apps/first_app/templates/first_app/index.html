@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>datetime</title>
+  </head>
+  <body>
+    <div class="">
+      <p>Random word(attempy #{{counter}})</p>
+    </div>
+    <div class="">
+    {{request.session.theword}}
+    </div>
+    <form class="" action="/randomize" method="post">
+      {% csrf_token %}
+      <input type="text" name="randomchar" value="">
+      <input type="submit" name="Generated" value="">
+    </form>
+    {{request.session.theword}}
+  </body>
+</html>

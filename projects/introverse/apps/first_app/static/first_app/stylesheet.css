@@ -1,0 +1,86 @@
+a{
+  text-decoration: none;
+}
+input{
+  background-color: grey;
+
+
+}
+
+
+.logregbox{
+  display: inline;
+  position: relative;
+  background-size:auto;
+  background-color: #1c4e51;
+  left: 20%;
+}
+.background{
+  width: 100%;
+  height: 2000px;
+  background-color: #231f20;
+}
+.login{
+  position: relative;
+  top: 850px;
+  background-color: grey;
+}
+.thebottombutt{
+  position: relative;
+  bottom: 540px;
+  left: 770px;
+  color: #962525;
+  font-size: 20px;
+}
+.readpublic{
+  position: relative;
+  bottom: 540px;
+  left: 780px;
+  color: #962525;
+  font-size: 20px;
+}
+
+.register{
+position: fixed;
+/*bottom: 300px;
+left: 300px;*/
+left: 65%;
+top: 30%;
+
+
+}
+.nameinput{
+  color: #a9dddd;
+}
+.aliasinput{
+  color: #a9dddd;
+}
+.emailinput{
+  color: #a9dddd;
+}
+.passwordinput{
+  color: #a9dddd;
+}
+.confirminput{
+  color: #a9dddd;
+}
+.dobinput{
+  color: #a9dddd;
+}
+.registerheader{
+  color: #a9dddd;
+}
+.title{
+  position: relative;
+  left: 100px;
+  bottom: 400px;
+  font-size: 50px;
+  color: #a9dddd;
+}
+.loginbutton{
+  color: white;
+}
+.instagram-media{
+  width: 100px;
+  height: 150px;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>WELCOME</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700%7CRoboto%7CJosefin+Sans:100,300,400,500" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+    <style>
+      #image img{
+        height:980px;
+        width:100%;
+        /*opacity: 0.5;*/
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <nav class="navbar navbar-default navbar-fixed-top" style="background-color:#1a1a1a; color:#e4e4e4;">
+       <div class="container">
+         <div class="navbar-header">
+           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+             <span class="sr-only">Toggle navigation</span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+           </button>
+         </div>
+         <div id="navbar" class="collapse navbar-collapse">
+           <h3 style="vertical-align:top; display:inline-block;">Welcome {{request.session.first_name}}!</h3>
+           <ul class="nav navbar-nav navbar-right">
+             <li><a href="/meetups" style="color:#e4e4e4;">Meetups</a></li>
+             <li><a href="/messageboard" style="color:#e4e4e4;">Message Board</a></li>
+             <li><a href="/social" style="color:#e4e4e4;">Social</a></li>
+             <li><a href="/deals" style="color:#e4e4e4;">Deals</a></li>
+             <li><a href="/logout" style="color:skyblue;">Logout</a></li>
+           </ul>
+         </div>
+       </div>
+     </nav>
+   </div>
+
+   <div id="image">
+     <img src="../../static/images/gym4.jpg">
+   </div>
+
+  <script>
+    var images = ["<img src='../../static/images/gym0.jpg'>", "<img src='../../static/images/gym1.jpg'>", "<img src='../../static/images/gym2.jpg'>", "<img src='../../static/images/gym3.jpg'>", "<img src='../../static/images/gym4.jpg'>"];
+    el = document.getElementById('image')
+    image_counter = 0;
+    function updateImage(){
+      el.innerHTML = '';
+      el.innerHTML = el.innerHTML+images[image_counter++];
+      if(image_counter == images.length){
+        image_counter = 0;
+      }
+    }
+    setInterval(updateImage, 10000);
+  </script>
+
+
+  </body>
+</html>

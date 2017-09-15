@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Trips</title>
+  </head>
+  <body>
+    <h3>Trip Dash</h3>
+    <p>Welcome {{first}}!</p>
+
+    <h4>Check out your trips!!</h4>
+    {% for trip in mytrips %}
+    <div class="mytrips">
+      <p>Destination: {{trip.destination}}</p>
+      <p>Startdate: {{trip.startdate}}</p>
+      <p>Enddate: {{trip.enddate}}</p>
+      <p>Plans: {{trip.plan}}</p>
+    </div>
+    {% endfor %}
+    <form class="" action="/trippage" method="post">
+      {% csrf_token %}
+      <input type="submit" name="addtrip" value="Add a Trip">
+    </form>
+
+    <h4>User trips!</h4>
+    {% for trip in trips %}
+    <div class="otherstrips">
+        <p>Destination: <a href="details/{{trip.id}}">{{trip.destination}}</a></p>
+        <p>Startdate: {{trip.startdate}}</p>
+        <p>Enddate: {{trip.enddate}}</p>
+        <p>Plans: {{trip.plan}}</p>
+        <a href="/join">Join</a>
+      </div>
+      <br>
+    {% endfor %}
+
+
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:8000/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>login/registration</title>
+  </head>
+  <body cz-shortcut-listen="true">
+    
+    <ul class="messages">
+      
+        <li class="error">Password is incorrect!</li>
+      
+    </ul>
+
+    <form class="" action="http://localhost:8000/registration" method="post">
+      <input type="hidden" name="csrfmiddlewaretoken" value="hwXsoSnakxNScvk8MxnWI1IPnofMs0nGqYuFcJpjZiZNWVIQvTiJdfGD8SDMZp8i">
+      <p>First Name: <input type="text" name="f_name" value=""></p>
+      <p>Last Name: <input type="text" name="l_name" value=""></p>
+      <p>Email: <input type="text" name="email" value=""></p>
+      <p>password: <input type="text" name="password" value=""></p>
+      <p>confirm pw: <input type="text" name="confirm_pw" value=""></p>
+      <input type="submit" name="registerbutt" value="Register">
+    </form>
+
+    <h2>Login</h2>
+    <form class="" action="http://localhost:8000/login" method="post">
+      <input type="hidden" name="csrfmiddlewaretoken" value="hwXsoSnakxNScvk8MxnWI1IPnofMs0nGqYuFcJpjZiZNWVIQvTiJdfGD8SDMZp8i">
+      <p>Email: <input type="text" name="logemail" value=""></p>
+      <p>Password: <input type="text" name="password" value=""></p>
+      <input type="submit" name="login" value="Log In">
+
+    </form>
+  
+
+</body></html>

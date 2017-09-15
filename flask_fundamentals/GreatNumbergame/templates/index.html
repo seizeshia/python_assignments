@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Random Number Game</title>
+  </head>
+  <body>
+    <h1>Great Number Game</h1>
+    <p>I am thinking of a number between 1 and 100
+      Take a guess!
+    </p>
+    <p>{{session['thenumber']}}</p>
+    <form class="" action="/guess" method="POST">
+      <input type="number" name='guess'>
+      <input type="submit" name="submit">
+    </form>
+
+    {% if result == "winner" %}
+      <div class="winner">winner!</div>
+        <form action="/playagain">
+          <input type="submit" name="replay" value="play again">
+        </form>
+    {% elif result == "higher" %}
+      <div class="higher">higher</div>
+    {% elif result == "lower" %}
+      <div class="lower">lower</div>
+    {% endif %}
+
+  </body>
+</html>

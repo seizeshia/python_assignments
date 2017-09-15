@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My Posts</title>
+    <style media="screen">
+      .posts{
+        border-width: thin;
+        border-color: black;
+        border-style: outset;
+        width: 200px;
+        height: 200px;
+        display: inline-block;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+    {% for post in posts %}
+    <div class="posts">
+      {{post.post}}
+    </div>
+    {% endfor %}
+    <label for="postcontent">Make a post!</label>
+    <form class="" action="{%url'posts'%}" method="post">
+      {% csrf_token %}
+      {{new_post_form.as_p}}
+      <input type="submit" name="name" value="Add New Post">
+       <!-- <textarea name="postcontent" rows="8" cols="80"></textarea>
+       <button> Post </button> -->
+    </form>
+
+  </body>
+  <script>
+    // You could also put this code in another JavaScript file... Remember to user $(document).ready() if the script tag is included before the DOM nodes you care about...
+    $('form').submit(function(e){
+      // preventDefault stops the default action of the event (e) from being triggered.
+      e.preventDefault();
+      console.log("Form submitted but no HTTP request sent to server!");
+    });
+  </script>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ninja Gold</title>
+  </head>
+  <body>
+    <div class="goldbox">gold here
+    </div>
+    <div class="farmbox">
+      <h4>Farm</h4>
+      <p class="earnamt">(earns 10-20 golds)</p>
+      <form class="farmgoldbutt" action="/process_money" method="post"/>
+        <input type="hidden" name="building" value="farm"/>
+        <input type="submit" name="farmgold" value="Find Gold"/>
+      </form>
+    </div>
+
+    <div class="farmbox">
+      <h4>Cave</h4>
+      <p class="earnamt">(earns 5-10 golds)</p>
+      <form class="farmgoldbutt" action="/process_money" method="post">
+        <input type="hidden" name="building" value="cave"/>
+        <input type="submit" name="cavegold" value="Find Gold">
+      </form>
+    </div>
+
+    <div class="farmbox">
+      <h4>House</h4>
+      <p class="earnamt">(earns 2-5 golds)</p>
+      <form class="farmgoldbutt" action="process_money" method="post">
+        <input type="hidden" name="building" value="house"/>
+        <input type="submit" name="housegold" value="Find Gold">
+      </form>
+    </div>
+    <div class="farmbox">
+      <h4>Casino</h4>
+      <p class="earnamt">(earns/takes 0-50 golds)</p>
+      <form class="farmgoldbutt" action="/process_money" method="post">
+        <input type="hidden" name="building" value="casino"/>
+        <input type="submit" name="casiongold" value="Find Gold">
+      </form>
+    </div>
+
+    <p>Activities</p>
+    <div class="activitiesbox">
+    </div>
+  </body>
+</html>

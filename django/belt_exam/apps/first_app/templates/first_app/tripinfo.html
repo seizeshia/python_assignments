@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Trip information</title>
+  </head>
+  <body>
+    <form class="" action="/logout" method="post">
+      {% csrf_token %}
+      <input type="submit" name="" value="Logout">
+    </form>
+    <form class="" action="/tripdash" method="post">
+      {% csrf_token %}
+      <input type="submit" name="s" value="Home">
+    </form>
+
+    <h1>Trip Information</h1>
+    <p>Planned By: {{thistrip.user_id.first}} {{thistrip.user_id.last}} </p>
+    <p>Destination: {{thistrip.destination}}</p>
+    <p>Description: {{thistrip.plan}}</p>
+    <p>Start date: {{thistrip.startdate}}</p>
+    <p>End Date: {{thistrip.enddate}}</p>
+
+
+    <h2>Other users' joining this trip</h2>
+    {% for users in usersontrip %}
+      <p>{{users.userid.first}} {{users.userid.last}}</p>
+    {% endfor %}
+  </body>
+</html>

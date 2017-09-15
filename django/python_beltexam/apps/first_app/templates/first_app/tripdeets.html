@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    {% for trip in info %}
+    <div class="otherstrips">
+        <p>Destination: {{trip.destination}}</p>
+        <p>Startdate: {{trip.startdate}}</p>
+        <p>Enddate: {{trip.enddate}}</p>
+        <p>Plans: {{trip.plan}}</p>
+        <a href="/join">Join</a>
+      </div>
+      <br>
+    {% endfor %}
+
+  </body>
+</html>

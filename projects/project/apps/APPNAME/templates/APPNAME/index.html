@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <style type="text/css">
+    *{
+      margin:auto;
+    }
+    .float{
+      margin: 0 auto;
+      width:980px;
+    }
+    /*HEADER*/
+    .header{
+      padding-top:13px;
+      background-color:#3b5998;
+      min-width:980px;
+      height:82px;
+    }
+    .header #title{
+      display:inline-block;
+      color:white;
+    }
+    .login_container{
+      float:right;
+      color:white;
+    }
+    .login_container a{
+      color:#9cabc5;
+    }
+
+    /*BODY*/
+    .body{
+      min-width:980px;
+      height:300px;
+    }
+    .body_left{
+      display:inline-block;
+      vertical-align:top;
+      width:565px;
+    }
+    .body_right{
+      display:inline-block;
+      float:right;
+      width:399px;
+    }
+    #reg_first_name{
+      width:172px;
+      font-size:18px;
+      padding: 8px 10px;
+      margin-bottom:5px;
+    }
+    #reg_last_name{
+      width:172px;
+      font-size:18px;
+      padding: 8px 10px;
+      margin-bottom:5px;
+    }
+    #reg_username{
+      width:377px;
+      font-size:18px;
+      padding: 8px 10px;
+      margin-bottom:5px;
+    }
+    #reg_password{
+      width:377px;
+      font-size:18px;
+      padding: 8px 10px;
+      margin-bottom:5px;
+    }
+    #reg_confirm_password{
+      width:377px;
+      font-size:18px;
+      padding: 8px 10px;
+      margin-bottom:5px;
+    }
+
+    /*FOOTER*/
+    .footer{
+      min-width:980px;
+      min-height:100px;
+      background-color:green;
+    }
+    </style>
+  </head>
+  <body>
+    {% if messages %}
+      {% for message in messages %}
+      <script>
+        alert('{{message}}');
+      </script>
+      {% endfor %}
+    {% endif %}
+    <!-- header -->
+    <div class="header">
+      <div class="float">
+        <h1 id="title">Gym Finder</h1>
+        <div class="login_container">
+          <form action="/login" method="post">
+            <table>
+              <tr>
+                <td>Username</td>
+                <td>Password</td>
+              </tr>
+              <tr>
+                <td><input type="text" name="login_username" required minlength="1"></td>
+                <td><input type="password" name="login_password" required minlength="1"></td>
+                <td><input type="submit" name="login" value="Login"></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><a href="">Forgot account?</a></td>
+              </tr>
+            </table>
+            {% csrf_token %}
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- body -->
+    <div class="body">
+      <div class="float">
+        <div class="body_left">
+          <h1>Why user Gym Finder?</h1>
+          <ul>
+            <li>GYM DEALS</li>
+            <li>COMMUNITY WORK OUTS</li>
+            <li>MEET UPS</li>
+            <li>MESSAGE BOARD</li>
+          </ul>
+        </div>
+        <div class="body_right">
+          <h1>Sign Up</h1>
+          <h3>It's free and always will be.</h3>
+
+          <form action="/register" method="post">
+            {% csrf_token %}
+            <input id="reg_first_name" type="text" placeholder="First name" name="reg_first_name" required minlength="3">
+            <input id="reg_last_name" type="text" placeholder="Last name" name="reg_last_name" required minlength="3">
+            <input id="reg_username" type="text" placeholder="Username" name="reg_username" required minlength="4"><br>
+            <input id="reg_password" type="password" placeholder="Password" name="reg_password" required minlength="8"><br>
+            <input id="reg_confirm_password" type="password" placeholder="Re-enter password" name="reg_confirm_password" required minlength="8">
+            <input type="submit" name="register" value="Register">
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- footer -->
+    <div class="footer">
+      <h1>PLACEHOLDER FOR FOOTER</h1>
+    </div>
+  </body>
+</html>

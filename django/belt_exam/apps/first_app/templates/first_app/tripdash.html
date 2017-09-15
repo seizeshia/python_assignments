@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tripdash</title>
+  </head>
+  <body>
+    <form class="" action="/logout" method="post">
+      {% csrf_token %}
+      <input type="submit" name="logout" value="Logout">
+    </form>
+
+    <h1>Welcome {{loggeduser}}!</h1>
+    <h2>Here are your trips!</h2>
+
+    {% for trip in mytrips %}
+    <div class="">
+      <a href="/tripinfo/{{trip.id}}"><p>Destination: {{trip.destination}}</p></a>
+      <p>The Plan: {{trip.plan}}</p>
+      <p>Start Date: {{trip.startdate}}</p>
+      <p>End Date: {{trip.enddate}}</p>
+      <p>Your email: {{trip.user_id.email}}</p>
+      <br>
+    </div>
+    {% endfor %}
+
+    <h2>Here are trips of other users</h2>
+    {% for other in others %}
+    <div class="">
+      <a href="/tripinfo/{{other.id}}"><p>Destination: {{other.destination}}</p></a>
+      <p>The Plan: {{other.plan}}</p>
+      <p>Start Date:{{other.startdate}}</p>
+      <p>End Date: {{other.enddate}}</p>
+      <p>User email: {{other.user_id.email}}</p>
+      <a href="/join/{{other.id}}">Join</a>
+      <br>
+    </div>
+    {% endfor %}
+    <form class="" action="/pageadd" method="post">
+      {% csrf_token %}
+      <button>Add Travel Plans</button>
+
+    </form>
+
+  </body>
+</html>

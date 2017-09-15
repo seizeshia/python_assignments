@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>survey</title>
+    <link rel="stylesheet" href="/dojosurvey/style.css">
+  </head>
+  <body>
+    <form class="form-box" method='post' action="/surveysubmit">
+      Name: <input class="name" type="text" name="name">
+      Dojo Location: <select class="locationbox" name='location'>
+        <option value="Burbank">Burbank</option>
+        <option value="Mountain View">Mountain View</option>
+        <option value="Seattle">Seattle</option>
+      </select>
+      Favorite Language: <select class="language" name="language">
+        <option value="Python">Python</option>
+        <option value="JavaScript">JavaScript</option>
+        <option value="IOS">IOS</option>
+      </select>
+      Comments (optional):
+      <textarea name="comments" rows="8" cols="80">
+      </textarea>
+      <input type='submit' value='Button'>
+    </form>
+  </body>
+</html>
